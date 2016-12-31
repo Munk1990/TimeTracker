@@ -11,6 +11,14 @@ import java.util.List;
 
 public class TaskDaoListImpl implements ITaskDao {
 
+    private static ITaskDao taskDao;
+    public static ITaskDao getTaskDao(){
+        if (taskDao == null){
+            taskDao = new TaskDaoListImpl();
+        }
+        return taskDao;
+    }
+
     List<Task> taskList = new ArrayList<>();
     @Override
     public void saveTask(Task task) {

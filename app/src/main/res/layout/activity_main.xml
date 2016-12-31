@@ -9,12 +9,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_weight="1">
-<fragment
-    android:id = "@+id/main_fragment"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    class = "com.kmayank.timetracker.TaskFragment"
-    tools:layout="@layout/fragment_task"></fragment>
+        <fragment
+            android:id = "@+id/main_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class = "com.kmayank.timetracker.TaskFragment"
+            tools:layout="@layout/fragment_task"/>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"

@@ -16,6 +16,7 @@
         android:orientation="vertical"
         android:layout_weight="0">
         <EditText
+            android:id="@+id/task_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -28,12 +29,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Counter"/>
+                android:text="Counter"
+                android:onClick="selectCounter"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Time"/>
+                android:text="Time"
+                android:onClick="selectTimer"/>
         </RadioGroup>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -56,6 +59,32 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:textColor="@color/colorPrimaryDark"></TextView>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set target counter"/>
+            <TextView
+                android:id="@+id/counter_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Hours"
+                android:onClick="selectCounterTime"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"/>
+            <TextView
+                android:id="@+id/counter_minute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mins"
+                android:onClick="selectCounterTime"/>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -70,7 +99,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create Task"/>
+            android:text="Create Task"
+            android:onClick="createTask"/>
     </RelativeLayout>
 
 </LinearLayout>

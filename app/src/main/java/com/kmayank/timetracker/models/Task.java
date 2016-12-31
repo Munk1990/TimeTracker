@@ -11,6 +11,25 @@ public class Task {
     private String taskId;
     private String taskName;
     private boolean taskActive = true;
+
+    public int getCounterMinutes() {
+        return counterMinutes;
+    }
+
+    public void setCounterMinutes(int counterMinutes) {
+        this.counterMinutes = counterMinutes;
+    }
+
+    private int counterMinutes;
+
+    public Integer getAlarmMinutes() {
+        return alarmMinutes;
+    }
+
+    public void setAlarmMinutes(Integer alarmMinutes) {
+        this.alarmMinutes = alarmMinutes;
+    }
+
     private Integer alarmMinutes;
     private Date lastAccessed;
 

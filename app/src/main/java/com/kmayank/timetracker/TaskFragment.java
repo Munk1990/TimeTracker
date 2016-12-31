@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.kmayank.timetracker.dao.ITaskDao;
+import com.kmayank.timetracker.dao.TaskDaoListImpl;
 
 
 /**
@@ -18,6 +22,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class TaskFragment extends Fragment {
+
+    ITaskDao taskDao = TaskDaoListImpl.getTaskDao();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "test";
@@ -58,6 +64,8 @@ public class TaskFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        TextView initView = (TextView)this.getActivity().findViewById(R.id.init_fragment);
+        initView.setText(taskDao.listAllTasks().size());
     }
 
     @Override
